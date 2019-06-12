@@ -5,22 +5,29 @@ const moment = require("moment");
 const list = async ctx => {
   const query = ctx.query;
 
-  // var from = query.from * 1000 || moment("2019-06-10 02:21:47").toDate();
-  // var to = query.to * 1000 || new Date(1560277578000);
-  // console.log(from);
-  // console.log(to);
+  var from =
+    query.from ||
+    moment("2019-01-1")
+      .toDate()
+      .getTime();
+  var to =
+    query.to ||
+    moment("2029-01-01")
+      .toDate()
+      .getTime();
+
   const where = {
     os: {
       [Op.like]: `%${query.os || ""}%`
     },
     app: {
       [Op.like]: `%${query.app || ""}%`
-    }
+    },
 
-    // createdAt: {
-    //   [Op.gt]: new Date(from),
-    //   [Op.lt]: new Date(to)
-    // }
+    createdAt: {
+      [Op.gt]: new Date(from),
+      [Op.lt]: new Date(to)
+    }
   };
   const { rows: data, count: total } = await Device.findAndCountAll({
     where,
