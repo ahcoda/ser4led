@@ -34,18 +34,18 @@ const device = sequelize.define(
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW,
       get() {
-        return moment(this.getDataValue("createdAt"))
-          .locale()
-          .format("YYYY-MM-DD HH:mm");
+        return moment(this.getDataValue("createdAt")).format(
+          "YYYY-MM-DD HH:mm"
+        );
       }
     },
     updatedAt: {
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW,
       get() {
-        return moment(this.getDataValue("updatedAt"))
-          .locale()
-          .format("YYYY-MM-DD HH:mm");
+        return moment(this.getDataValue("updatedAt")).format(
+          "YYYY-MM-DD HH:mm"
+        );
       }
     }
   },
