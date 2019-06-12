@@ -42,7 +42,10 @@ const listAll = async ctx => {
   ctx.body = {
     code: 0,
     msg: "",
-    data: devices
+    data: {
+      total: devices.length,
+      items: devices
+    }
   };
 };
 
