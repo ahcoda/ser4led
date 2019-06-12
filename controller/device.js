@@ -1,11 +1,14 @@
 const Device = require("../model/device");
 const Op = require("sequelize").Op;
+const moment = require("moment");
 
 const list = async ctx => {
   const query = ctx.query;
 
-  console.log(query);
-
+  // var from = query.from * 1000 || moment("2019-06-10 02:21:47").toDate();
+  // var to = query.to * 1000 || new Date(1560277578000);
+  // console.log(from);
+  // console.log(to);
   const where = {
     os: {
       [Op.like]: `%${query.os || ""}%`
@@ -13,6 +16,11 @@ const list = async ctx => {
     app: {
       [Op.like]: `%${query.app || ""}%`
     }
+
+    // createdAt: {
+    //   [Op.gt]: new Date(from),
+    //   [Op.lt]: new Date(to)
+    // }
   };
   const { rows: data, count: total } = await Device.findAndCountAll({
     where,

@@ -12,10 +12,10 @@
 
 
 
-| 字段名称       | 含义         | 类型     | 可空  | 示例          |
-| ---------- | ---------- | ------ | --- | ----------- |
+| 字段名称   | 含义         | 类型   | 可空 | 示例        |
+| ---------- | ------------ | ------ | ---- | ----------- |
 | mac        | led 灯带 mac | string | 否   | GTK-01      |
-| os         | 平台类型       | string | 否   | ios/android |
+| os         | 平台类型     | string | 否   | ios/android |
 | app        | app 名称     | string | 否   | slight      |
 | longtitude | 经度         | double | 是   | 33.0        |
 | latitude   | 纬度         | double | 是   | 160.00      |
@@ -91,13 +91,13 @@
 - 方法: `get`
 - 参数:  
 
-| 参数    | 含义             | 可空  | 示例          |
-| ----- | -------------- | --- | ----------- |
-| index | page index     | 否   | 0 从0开始      |
+| 参数  | 含义               | 可空 | 示例        |
+| ----- | ------------------ | ---- | ----------- |
+| index | page index         | 否   | 0 从0开始   |
 | size  | page size 分页大小 | 否   | 10          |
 | os    | 平台类型           | 是   | ios/android |
-| app   | app 名称         | 是   | slight      |
-|       |                |     |             |
+| app   | app 名称           | 是   | slight      |
+|       |                    |      |             |
 
 响应报文
 
@@ -141,3 +141,8 @@
 ## 相关参数
 
 1. 数据库名称为 led
+www.yiqibangbang.com
+
+mysql: July3253^&
+ssh root@47.95.114.42
+chenhe@123
