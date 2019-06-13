@@ -10,9 +10,15 @@ const device = sequelize.define(
       primaryKey: true,
       autoIncrement: true
     },
+    udid: {
+      allowNull: false,
+      type: Sequelize.STRING(255),
+      unique: "uk_mac"
+    },
     mac: {
       allowNull: false,
-      type: Sequelize.STRING(255)
+      type: Sequelize.STRING(255),
+      unique: "uk_mac"
     },
     longtitude: {
       type: Sequelize.DOUBLE,
@@ -21,6 +27,10 @@ const device = sequelize.define(
     latitude: {
       type: Sequelize.DOUBLE,
       defaultValue: 0.0
+    },
+    use: {
+      type: Sequelize.Sequelize.INTEGER(11),
+      defaultValue: 1
     },
     app: {
       allowNull: false,
