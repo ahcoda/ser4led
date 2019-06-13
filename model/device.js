@@ -29,7 +29,7 @@ const device = sequelize.define(
       defaultValue: 0.0
     },
     use: {
-      type: Sequelize.Sequelize.INTEGER(11),
+      type: Sequelize.INTEGER(11),
       defaultValue: 1
     },
     app: {
