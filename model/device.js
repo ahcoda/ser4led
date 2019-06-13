@@ -12,13 +12,13 @@ const device = sequelize.define(
     },
     udid: {
       allowNull: false,
-      type: Sequelize.STRING(255),
-      unique: "uk_mac"
+      type: Sequelize.STRING(255)
+      // unique: "uk_mac"
     },
     mac: {
       allowNull: false,
-      type: Sequelize.STRING(255),
-      unique: "uk_mac"
+      type: Sequelize.STRING(255)
+      // unique: "uk_mac"
     },
     longtitude: {
       type: Sequelize.DOUBLE,
