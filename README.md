@@ -6,7 +6,7 @@
 
 ### 添加记录
 
-1. 地址: `/led/create`
+1. 地址: `http://www.yiqibangbang.com:8080/led/create`
 2. 方法:  `post`
 3. 参数:
 
