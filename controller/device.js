@@ -84,11 +84,29 @@ const create = async ctx => {
     return false;
   }
 
+  if (!params.app) {
+    ctx.body = {
+      code: 3,
+      msg: "app 名称为空"
+    };
+    return false;
+  }
+
+  if (!params.os) {
+    ctx.body = {
+      code: 4,
+      msg: "udid为空"
+    };
+    return false;
+  }
+
   try {
     const one = await Device.findOne({
       where: {
         mac: params.mac,
-        udid: params.udid
+        udid: params.udid,
+        app: params.app,
+        os: params.os
       }
     });
 
