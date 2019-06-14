@@ -95,7 +95,7 @@ const create = async ctx => {
   if (!params.os) {
     ctx.body = {
       code: 4,
-      msg: "udid为空"
+      msg: "os为空"
     };
     return false;
   }
