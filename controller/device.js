@@ -1,6 +1,7 @@
 const Device = require("../model/device");
 const Op = require("sequelize").Op;
 const moment = require("moment");
+const md5 = require("md5");
 
 const list = async ctx => {
   const query = ctx.query;
@@ -96,6 +97,31 @@ const create = async ctx => {
     ctx.body = {
       code: 4,
       msg: "os为空"
+    };
+    return false;
+  }
+
+  if (!params.sn) {
+    ctx.body = {
+      code: 5,
+      msg: "sn为空"
+    };
+    return false;
+  }
+
+  // 验证签名
+  const hash4udid = md5(params.udid);
+  const hash4mac = md5(params.mac);
+  const hash4app = md5(params.app);
+
+  const sm =
+    hash4udid.substr(0, 6) + hash4mac.substr(0, 6) + hash4app.substr(0, 6);
+  const sn_check = md5(sm).substr(0, 12);
+
+  if (params.sn.toLowerCase() != sn_check.toLowerCase()) {
+    ctx.body = {
+      code: 6,
+      msg: "sn验证失败"
     };
     return false;
   }

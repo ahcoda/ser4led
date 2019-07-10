@@ -14,8 +14,9 @@
 | ---------- | ------------ | ------ | ---- | ----------- |
 | udid       | 手机 的 id   | string | 否   | xx-xx       |
 | mac        | led 灯带 mac | string | 否   | GTK-01      |
-| os         | 平台类型     | string | 否   | ios/android |
 | app        | app 名称     | string | 否   | slight      |
+| sn         | 签名         | string | 否   | asdfsd      |
+| os         | 平台类型     | string | 否   | ios/android |
 | longtitude | 经度         | double | 是   | 33.0        |
 | latitude   | 纬度         | double | 是   | 160.00      |
 
