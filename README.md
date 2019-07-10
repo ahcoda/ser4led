@@ -10,17 +10,22 @@
 2. 方法: `post`
 3. 参数:
 
-| 字段名称   | 含义         | 类型   | 可空 | 示例        |
-| ---------- | ------------ | ------ | ---- | ----------- |
-| udid       | 手机 的 id   | string | 否   | xx-xx       |
-| mac        | led 灯带 mac | string | 否   | GTK-01      |
-| app        | app 名称     | string | 否   | slight      |
-| sn         | 签名         | string | 否   | asdfsd      |
-| os         | 平台类型     | string | 否   | ios/android |
-| longtitude | 经度         | double | 是   | 33.0        |
-| latitude   | 纬度         | double | 是   | 160.00      |
+| 字段名称   | 含义            | 类型   | 可空 | 示例         |
+| ---------- | --------------- | ------ | ---- | ------------ |
+| udid       | 手机 的 id      | string | 否   | xx-xx        |
+| mac        | led 灯带 mac    | string | 否   | GTK-01       |
+| app        | app 名称        | string | 否   | slight       |
+| sn         | 签名 12位字符串 | string | 否   | a12cf89ca5e6 |
+| os         | 平台类型        | string | 否   | ios/android  |
+| longtitude | 经度            | double | 是   | 33.0         |
+| latitude   | 纬度            | double | 是   | 160.00       |
+
+sn = md5(md5(udid).sub(6) + md5(mac).sub(6) + md5(app).sub(6)).sub(12)
 
 响应结果
+
+
+
 
 ```json
 {
